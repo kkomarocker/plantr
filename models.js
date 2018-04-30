@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const models = new Sequelize("postgres://localhost:5432/plantr");
+const models = new Sequelize("postgres://localhost:5432/plantr", {logging: false});
 
 const Gardener = models.define('gardeners', {
   name: {
@@ -27,7 +27,7 @@ const Vegetable = models.define('vegetables', {
     type: Sequelize.STRING
   },
   planted_on: {
-    type: Sequelize.DATE
+    type: Sequelize.DATEONLY
   }
 });
 
